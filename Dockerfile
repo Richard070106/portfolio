@@ -1,7 +1,8 @@
 FROM php:8.4-cli
 
 RUN apt-get update && apt-get install -y \
-    git unzip zip curl sqlite3 libsqlite3-dev
+    git unzip zip curl sqlite3 libsqlite3-dev \
+    nodejs npm
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
